@@ -43,11 +43,14 @@ def convert_mp3_to_wav(filename, sample_frequency):
     filename_tmp = tmp_path + '/' + orig_filename + '.mp3'
     new_name = new_path + '/' + orig_filename + '.wav'
 
+    # These lines calls LAME to resample the audio file at the standard analog frequency of 44,100 Hz and then convert it to WAV
     sample_freq_str = "{0:.1f}".format(float(sample_frequency) / 1000.0)
     cmd = 'lame -a -m m {0} {1}'.format(quote(filename), quote(filename_tmp))
     os.system(cmd)
     cmd = 'lame --decode {0} {1} --resample {2}'.format(quote(filename_tmp), quote(new_name), sample_freq_str)
     os.system(cmd)
+
+    # Returns the name of the directory where all the WAV files are stored
     return new_name
 
 
@@ -91,7 +94,9 @@ def convert_folder_to_wav(directory, sample_rate=44100):
 
 
 def read_wav_as_np(filename):
+    # wav.read returns the sampling rate per second  (as an int) and the data (as a numpy array)
     data = wav.read(filename)
+
     np_arr = data[1].astype('float32') / 32767.0  # Normalize 16-bit input to [-1, 1] range
     # np_arr = np.array(np_arr)
     return np_arr, data[0]
@@ -105,11 +110,21 @@ def write_np_as_wav(X, sample_rate, filename):
 
 
 def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song_np by padding it
+
+    # Block lists initialised
     block_lists = []
+
+    # total_samples holds the size of the numpy array
     total_samples = song_np.shape[0]
+
+    #num_samples_so_far is used to loop through the numpy array
     num_samples_so_far = 0
+
     while (num_samples_so_far < total_samples):
+
+        # Stores each block in the "block" variable
         block = song_np[num_samples_so_far:num_samples_so_far + block_size]
+
         if (block.shape[0] < block_size):
             padding = np.zeros(
                     (block_size - block.shape[0],))  # this is to add 0's in the last block if it not completely filled
@@ -118,6 +133,7 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
         block_lists.append(block)
         num_samples_so_far += block_size
     return block_lists
+
 
 
 def convert_sample_blocks_to_np_audio(blocks):
@@ -156,6 +172,8 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     for file in os.listdir(directory):
         if file.endswith('.wav'):
             files.append(directory + file)
+
+    # chunks_X and chunks_Y are initialised as lists
     chunks_X = []
     chunks_Y = []
 
@@ -164,10 +182,16 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     if (num_files > max_files):
         num_files = max_files
 
+    # This loops through the indices (0 -> max_files) of the files list
     for file_idx in range(num_files):
+        # Each file is stored in the variable "file"
         file = files[file_idx]
+
+        # Prints some sort of processing message to the user, using file index and number of files
         print('Processing: ', (file_idx + 1), '/', num_files)
         print('Filename: ', file)
+
+
         X, Y = load_training_example(file, block_size, useTimeDomain=useTimeDomain)
         cur_seq = 0
         total_seq = len(X)
@@ -216,9 +240,14 @@ def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False
 
 
 def load_training_example(filename, block_size=2048, useTimeDomain=False):
+
+    #read_wav_as_np returns data as a numpy array and the sampling rate stored in data and bitrate respectively
     data, bitrate = read_wav_as_np(filename)
+
     # x_t has the padded data i.e with 0's in the empty space of the last block
     x_t = convert_np_audio_to_sample_blocks(data, block_size)
+
+
     y_t = x_t[1:]
     y_t.append(np.zeros(block_size))  # Add special end block composed of all zeros
     if useTimeDomain:
