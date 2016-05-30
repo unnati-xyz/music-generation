@@ -32,7 +32,7 @@ if os.path.isfile(model_filename):
 	model.load_weights(model_filename)
 
 num_iters = 3			#Number of iterations for training
-epochs_per_iter = 3	#Number of iterations before we save our model
+epochs_per_iter = 3	    #Number of iterations before we save our model
 batch_size = 3			#Number of training examples pushed to the GPU per batch.
 						#Larger batch sizes require more memory, but training will be faster
 print ('Starting training!')

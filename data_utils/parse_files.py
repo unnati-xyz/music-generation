@@ -227,12 +227,15 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     np.save(out_file + '_var', std_x)
     np.save(out_file + '_x', x_data)
     np.save(out_file + '_y', y_data)
-    print('Done!')
+    inter_filename = './tensor_to_song.wav'
+    convert_nptensor_to_wav_files(x_data,num_examples,inter_filename,False)
+    print('Done converting the input to the neural network to a WAV file')
+    print('Done converting the WAV file to an np tensor to feed to the RNN ')
 
 
 def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False):
     num_seqs = tensor.shape[1]
-    for i in indices:
+    for i in range(indices):
         chunks = []
         for x in range(num_seqs):
             chunks.append(tensor[i][x])
