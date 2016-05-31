@@ -44,6 +44,8 @@ while cur_iter < num_iters:
 	#The moral way to handle this is to manually split 
 	#your data into two sets and run cross-validation after 
 	#you've trained the model for some number of epochs
+
+	#Iterate over the training data in batches
 	history = model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=epochs_per_iter, verbose=1, validation_split=0.0)
 	cur_iter += epochs_per_iter
 print ('Training complete!')

@@ -12,8 +12,8 @@ freq = config['sampling_frequency'] #sample frequency in Hz
 
 # The author defines "clip_len", "block_size" and "max_seq_len"
 
-clip_len = 10 		#length of clips for training. Defined in seconds
-block_size = freq / 4 #block sizes used for training - this defines the size of our input state
+clip_len = 10 		    #length of clips for training. Defined in seconds
+block_size = freq / 4  #block sizes used for training - this defines the size of our input state
 max_seq_len = int(round((freq * clip_len) / block_size)) #Used later for zero-padding song sequences
 #Step 1 - convert MP3s to WAVs
 new_directory = convert_folder_to_wav(input_directory, freq)
