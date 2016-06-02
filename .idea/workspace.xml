@@ -2,7 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="374a8202-7fca-4d4b-a2fc-9f13d1463caa" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/music-generation.iml" afterPath="$PROJECT_DIR$/.idea/music-generation.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/nn_config.py" afterPath="$PROJECT_DIR$/config/nn_config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/convert_directory.py" afterPath="$PROJECT_DIR$/convert_directory.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_utils/parse_files.py" afterPath="$PROJECT_DIR$/data_utils/parse_files.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x0.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x1.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x10.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x10.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x11.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x11.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x12.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x12.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x13.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x13.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x14.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x14.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x15.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x15.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x16.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x16.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x17.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x17.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x18.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x18.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x19.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x19.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x2.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x20.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x20.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x21.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x21.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x22.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x22.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x23.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x23.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x24.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x24.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x25.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x25.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x26.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x26.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x27.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x27.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x28.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x28.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x29.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x29.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x3.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x30.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x30.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x31.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x31.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x32.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x32.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x33.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x33.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x4.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x4.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x5.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x5.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x6.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x6.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x7.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x7.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x8.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x8.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x9.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x9.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nn_utils/network_utils.py" afterPath="$PROJECT_DIR$/nn_utils/network_utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train.py" afterPath="$PROJECT_DIR$/train.py" />
     </list>
     <ignored path="music-generation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,12 +63,12 @@
     <favorites_list name="music-generation" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="convert_directory.py" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="convert_directory.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/convert_directory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.40842786">
+              <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -35,14 +76,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parse_files.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parse_files.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_utils/parse_files.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40625">
-              <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
+            <state vertical-scroll-proportion="-40.580647">
+              <caret line="229" column="5" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="5" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1833333">
+              <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="network_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nn_utils/network_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wavfile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/wavfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="12.354838">
+              <caret line="201" column="13" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nn_config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/nn_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.645161">
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,15 +140,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/wavfile.py" />
+        <option value="$PROJECT_DIR$/config/nn_config.py" />
+        <option value="$PROJECT_DIR$/convert_directory.py" />
         <option value="$PROJECT_DIR$/data_utils/parse_files.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/nn_utils/network_utils.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="x" value="61" />
+    <option name="y" value="24" />
+    <option name="width" value="1305" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -90,6 +180,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -110,14 +202,49 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="network&#9;null&#9;null&#10;48000&#9;FILE&#9;file:///home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/tests/data/test-48000Hz-2ch-64bit-float-le-wavex.wav&#10;44100&#9;FILE&#9;file:///home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/tests/data/test-44100Hz-le-1ch-4bytes.wav&#10;wav&#9;null&#9;null&#10;scipy&#9;null&#9;null&#10;n&#9;FILE&#9;file:///home/padmaja/code/music-generation/config/nn_config.py" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.train">
+    <configuration default="false" name="convert_directory" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="music-generation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convert_directory.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="train" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="music-generation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -240,8 +367,21 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.convert_directory" />
+      <item index="1" class="java.lang.String" itemvalue="Python.train" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.train" />
+        <item index="1" class="java.lang.String" itemvalue="Python.convert_directory" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="374a8202-7fca-4d4b-a2fc-9f13d1463caa" name="Default" comment="" />
@@ -252,27 +392,54 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="61" y="24" width="1305" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1950078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32302937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1950078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32302937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -282,17 +449,9 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/nn_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/convert_directory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -302,10 +461,138 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_utils/parse_files.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40625">
-          <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/convert_directory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_utils/parse_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/statsmodels/compat/scipy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/tests/data/test-44100Hz-2ch-32bit-float-be.wav">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/tests/data/test-44100Hz-le-1ch-4bytes.wav">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/tests/data/test-48000Hz-2ch-64bit-float-le-wavex.wav">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/struct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5346535">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#175#196#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1774574539/_struct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5074257">
+          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/scipy/io/wavfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.354838">
+          <caret line="201" column="13" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/nn_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.645161">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1833333">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nn_utils/network_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_utils/parse_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-40.580647">
+          <caret line="229" column="5" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/convert_directory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40842786">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

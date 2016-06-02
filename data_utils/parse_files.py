@@ -116,8 +116,9 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
 
     # total_samples holds the size of the numpy array
     total_samples = song_np.shape[0]
+    #print('total_samples=',total_samples)
 
-    #num_samples_so_far is used to loop through the numpy array
+    # num_samples_so_far is used to loop through the numpy array
     num_samples_so_far = 0
 
     while (num_samples_so_far < total_samples):
@@ -129,11 +130,10 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
             padding = np.zeros(
                     (block_size - block.shape[0],))  # this is to add 0's in the last block if it not completely filled
             block = np.concatenate((block,
-                                    padding))  # block_size is 11025 which is fixed throughout whereas block.shape[0] for the last block is <=11025
+                                    padding))  # block_size is 44100 which is fixed throughout whereas block.shape[0] for the last block is <=44100
         block_lists.append(block)
         num_samples_so_far += block_size
     return block_lists
-
 
 
 def convert_sample_blocks_to_np_audio(blocks):
@@ -191,7 +191,6 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
         print('Processing: ', (file_idx + 1), '/', num_files)
         print('Filename: ', file)
 
-
         X, Y = load_training_example(file, block_size, useTimeDomain=useTimeDomain)
         cur_seq = 0
         total_seq = len(X)
@@ -201,7 +200,8 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
             chunks_X.append(X[cur_seq:cur_seq + max_seq_len])
             chunks_Y.append(Y[cur_seq:cur_seq + max_seq_len])
             cur_seq += max_seq_len
-    num_examples = len(chunks_X)
+    num_examples = len(chunks_X)  # num_examples=34 because for 1st file total_seq=133 & max_seq_len=10 so 133/10=13
+    # for 2nd file total_seq=220 & max_seq_len=10 so 220/10=22. Hence num_examples=13+21=34
     num_dims_out = block_size * 2
     if (useTimeDomain):
         num_dims_out = block_size
@@ -216,7 +216,7 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     print('Flushing to disk...')
     mean_x = np.mean(np.mean(x_data, axis=0), axis=0)  # Mean across num examples and num timesteps
     std_x = np.sqrt(
-        np.mean(np.mean(np.abs(x_data - mean_x) ** 2, axis=0), axis=0))  # STD across num examples and num timesteps
+            np.mean(np.mean(np.abs(x_data - mean_x) ** 2, axis=0), axis=0))  # STD across num examples and num timesteps
     std_x = np.maximum(1.0e-8, std_x)  # Clamp variance if too tiny
     x_data[:][:] -= mean_x  # Mean 0
     x_data[:][:] /= std_x  # Variance 1
@@ -227,8 +227,8 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     np.save(out_file + '_var', std_x)
     np.save(out_file + '_x', x_data)
     np.save(out_file + '_y', y_data)
-    inter_filename = './tensor_to_song.wav'
-    convert_nptensor_to_wav_files(x_data,num_examples,inter_filename,False)
+    inter_filename = out_file+'_x'
+    convert_nptensor_to_wav_files(x_data, num_examples, inter_filename, False)
     print('Done converting the input to the neural network to a WAV file')
     print('Done converting the WAV file to an np tensor to feed to the RNN ')
 
@@ -244,12 +244,12 @@ def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False
 
 def load_training_example(filename, block_size=2048, useTimeDomain=False):
 
-    #read_wav_as_np returns data as a numpy array and the sampling rate stored in data and bitrate respectively
+    print('block_size=',block_size)
+    # read_wav_as_np returns data as a numpy array and the sampling rate stored in data and bitrate respectively
     data, bitrate = read_wav_as_np(filename)
 
     # x_t has the padded data i.e with 0's in the empty space of the last block
     x_t = convert_np_audio_to_sample_blocks(data, block_size)
-
 
     y_t = x_t[1:]
     y_t.append(np.zeros(block_size))  # Add special end block composed of all zeros
