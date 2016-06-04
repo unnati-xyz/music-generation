@@ -54,31 +54,10 @@ def convert_mp3_to_wav(filename, sample_frequency):
     return new_name
 
 
-def convert_flac_to_wav(filename, sample_frequency):
-    ext = filename[-5:]
-    if (ext != '.flac'):
-        return
-    files = filename.split('/')
-    orig_filename = files[-1][0:-5]
-    orig_path = filename[0:-len(files[-1])]
-    new_path = ''
-    if (filename[0] == '/'):
-        new_path = '/'
-    for i in range(len(files) - 1):
-        new_path += files[i] + '/'
-    new_path += 'wave'
-    if not os.path.exists(new_path):
-        os.makedirs(new_path)
-    new_name = new_path + '/' + orig_filename + '.wav'
-    cmd = 'sox {0} {1} channels 1 rate {2}'.format(quote(filename), quote(new_name), sample_frequency)
-    os.system(cmd)
-    return new_name
-
-
-# The below method converts the mp3 or FLAC files in the directory to WAV files
+# The below method converts the mp3 files in the directory to WAV files
 
 def convert_folder_to_wav(directory, sample_rate=44100):
-    # The below for loop runs through all the mp3/FLAC files and converts them to WAV
+    # The below for loop runs through all the mp3 files and converts them to WAV
     for file in os.listdir(directory):
 
         # fullfilename holds the name of the directory and the file one after another
@@ -87,8 +66,6 @@ def convert_folder_to_wav(directory, sample_rate=44100):
         # The below if - elif statement converts the file to WAV based on its file extension
         if file.endswith('.mp3'):
             convert_mp3_to_wav(filename=fullfilename, sample_frequency=sample_rate)
-        elif file.endswith('.flac'):
-            convert_flac_to_wav(filename=fullfilename, sample_frequency=sample_rate)
 
     return directory + 'wave/'
 

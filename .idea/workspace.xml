@@ -2,48 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="374a8202-7fca-4d4b-a2fc-9f13d1463caa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/music-generation.iml" afterPath="$PROJECT_DIR$/.idea/music-generation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/nn_config.py" afterPath="$PROJECT_DIR$/config/nn_config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/convert_directory.py" afterPath="$PROJECT_DIR$/convert_directory.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/.idea/music-generation.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore/datasets/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_utils/parse_files.py" afterPath="$PROJECT_DIR$/data_utils/parse_files.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x0.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x0.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x1.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x1.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x10.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x10.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x11.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x11.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x12.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x12.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x13.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x13.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x14.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x14.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x15.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x15.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x16.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x16.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x17.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x17.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x18.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x18.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x19.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x19.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x2.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x2.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x20.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x20.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x21.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x21.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x22.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x22.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x23.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x23.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x24.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x24.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x25.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x25.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x26.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x26.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x27.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x27.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x28.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x28.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x29.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x29.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x3.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x3.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x30.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x30.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x31.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x31.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x32.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x32.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x33.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x33.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x4.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x4.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x5.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x5.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x6.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x6.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x7.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x7.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x8.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x8.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x9.wav" afterPath="$PROJECT_DIR$/datasets/YourMusicLibraryNP_x9.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nn_utils/network_utils.py" afterPath="$PROJECT_DIR$/nn_utils/network_utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train.py" afterPath="$PROJECT_DIR$/train.py" />
     </list>
     <ignored path="music-generation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,9 +48,10 @@
         <entry file="file://$PROJECT_DIR$/data_utils/parse_files.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-40.580647">
-              <caret line="229" column="5" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="5" />
+              <caret line="206" column="5" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="5" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+                <marker date="1464895214649" expanded="true" signature="2630:2722" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -393,7 +362,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="24" width="1305" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1950078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -465,6 +434,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+            <marker date="1464895214649" expanded="true" signature="2630:2722" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -485,6 +455,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+            <marker date="1464895214649" expanded="true" signature="2630:2722" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -580,9 +551,10 @@
     <entry file="file://$PROJECT_DIR$/data_utils/parse_files.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-40.580647">
-          <caret line="229" column="5" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="5" />
+          <caret line="206" column="5" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="5" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+            <marker date="1464895214649" expanded="true" signature="2630:2722" placeholder="..." />
           </folding>
         </state>
       </provider>
