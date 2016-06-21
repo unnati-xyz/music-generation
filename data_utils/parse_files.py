@@ -3,7 +3,9 @@ import scipy.io.wavfile as wav
 import numpy as np
 from pipes import quote
 from config import nn_config
-
+import matplotlib.pyplot as plt
+import wave
+import math
 
 def convert_mp3_to_wav(filename, sample_frequency):
     # This statement gets the file extension for the file to make sure that it is an mp3 file before conversion begins
@@ -50,6 +52,26 @@ def convert_mp3_to_wav(filename, sample_frequency):
     cmd = 'lame --decode {0} {1} --resample {2}'.format(quote(filename_tmp), quote(new_name), sample_freq_str)
     os.system(cmd)
 
+    '''This plots Amplitude on Y-axis and Time in seconds on X-axis'''
+
+    # plot the converted wav file
+    spf = wave.open(new_name, 'r')
+
+    # Extract Raw Audio from Wav File
+    signal = spf.readframes(-1)
+    signal = np.fromstring(signal, 'Int16')
+    fs = spf.getframerate()
+
+    # To Plot x-axis in seconds you need get the frame rate and divide by size of your signal.
+    # linspace function from numpy is used to create a Time Vector spaced linearly with the size of the audio file
+
+    time = np.linspace(0, len(signal)/fs, num=len(signal))
+
+    plt.figure(1)
+    plt.title('Signal Wave...')
+    plt.plot(time, signal)
+    plt.show()
+
     # Returns the name of the directory where all the WAV files are stored
     return new_name
 
@@ -66,6 +88,7 @@ def convert_folder_to_wav(directory, sample_rate=44100):
         # The below if - elif statement converts the file to WAV based on its file extension
         if file.endswith('.mp3'):
             convert_mp3_to_wav(filename=fullfilename, sample_frequency=sample_rate)
+
 
     return directory + 'wave/'
 
@@ -93,7 +116,7 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
 
     # total_samples holds the size of the numpy array
     total_samples = song_np.shape[0]
-    #print('total_samples=',total_samples)
+    '''print('total_samples=', total_samples)'''
 
     # num_samples_so_far is used to loop through the numpy array
     num_samples_so_far = 0
@@ -102,7 +125,7 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
 
         # Stores each block in the "block" variable
         block = song_np[num_samples_so_far:num_samples_so_far + block_size]
-
+        '''print("block.shape[0]=", block.shape[0])'''
         if (block.shape[0] < block_size):
             padding = np.zeros(
                     (block_size - block.shape[0],))  # this is to add 0's in the last block if it not completely filled
@@ -115,18 +138,42 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
 
 def convert_sample_blocks_to_np_audio(blocks):
     song_np = np.concatenate(blocks)
+    '''print("songs.shape=", np.shape(song_np))'''
     return song_np
 
 
-def time_blocks_to_fft_blocks(blocks_time_domain):
+def time_blocks_to_fft_blocks(blocks_time_domain, count):
     fft_blocks = []
+    plot_block=[]
+    amplitude = []
     for block in blocks_time_domain:
+        '''print("block=",block)'''
         # Computes the one-dimensional discrete Fourier Transform and returns the complex nD array
         # i.e The truncated or zero-padded input, transformed along the axis indicated by axis, or the last one if axis is not specified.
         fft_block = np.fft.fft(block)
         new_block = np.concatenate(
                 (np.real(fft_block), np.imag(fft_block)))  # Joins a sequence of arrays along an existing axis.
         fft_blocks.append(new_block)
+        plot_block.append(fft_block)
+
+    # plots signal after fft
+    timeRange = np.arange(0, 44100, 44100.0/len(plot_block))
+
+    # Calculating the amplitude of each frequency
+
+    for index in range(len(plot_block)):
+        amplitude.append(np.sqrt(np.real(plot_block[index])**2 + np.imag(plot_block[index])**2))
+
+    if count == 1:
+        plt.title('Signal X')
+
+    else:
+        plt.title('Signal Y')
+
+    # Plotting the DFT
+    plt.plot(timeRange, amplitude)
+    plt.show()
+
     return fft_blocks
 
 
@@ -171,6 +218,7 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
         X, Y = load_training_example(file, block_size, useTimeDomain=useTimeDomain)
         cur_seq = 0
         total_seq = len(X)
+        print("X.shape", np.shape(X))
         print(total_seq)
         print(max_seq_len)
         while cur_seq + max_seq_len < total_seq:
@@ -204,7 +252,9 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     np.save(out_file + '_var', std_x)
     np.save(out_file + '_x', x_data)
     np.save(out_file + '_y', y_data)
-    inter_filename = out_file+'_x'
+    print("x_data=", np.shape(x_data))
+    print("y_data=", np.shape(y_data))
+    inter_filename = out_file + '_x'
     convert_nptensor_to_wav_files(x_data, num_examples, inter_filename, False)
     print('Done converting the input to the neural network to a WAV file')
     print('Done converting the WAV file to an np tensor to feed to the RNN ')
@@ -216,24 +266,37 @@ def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False
         chunks = []
         for x in range(num_seqs):
             chunks.append(tensor[i][x])
+        chunk_wav=filename + str(i) + '.wav'
         save_generated_example(filename + str(i) + '.wav', chunks, useTimeDomain=useTimeDomain)
+
+        spf = wave.open(chunk_wav, 'r')
+
+        # Extract Raw Audio from Wav File
+        signal = spf.readframes(-1)
+        signal = np.fromstring(signal, 'Int16')
+        fs = spf.getframerate()
+
+        time = np.linspace(0, len(signal)/fs, num=len(signal))
+
+        plt.figure(1)
+        plt.title('Wave chunk ' + str(i+1))
+        plt.plot(time, signal)
+        plt.show()
+
 
 
 def load_training_example(filename, block_size=2048, useTimeDomain=False):
-
-    print('block_size=',block_size)
     # read_wav_as_np returns data as a numpy array and the sampling rate stored in data and bitrate respectively
     data, bitrate = read_wav_as_np(filename)
 
     # x_t has the padded data i.e with 0's in the empty space of the last block
     x_t = convert_np_audio_to_sample_blocks(data, block_size)
-
     y_t = x_t[1:]
     y_t.append(np.zeros(block_size))  # Add special end block composed of all zeros
     if useTimeDomain:
         return x_t, y_t
-    X = time_blocks_to_fft_blocks(x_t)
-    Y = time_blocks_to_fft_blocks(y_t)
+    X = time_blocks_to_fft_blocks(x_t, 1)
+    Y = time_blocks_to_fft_blocks(y_t, 2)
     return X, Y
 
 
