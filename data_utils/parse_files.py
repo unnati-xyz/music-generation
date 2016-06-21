@@ -96,7 +96,7 @@ def convert_folder_to_wav(directory, sample_rate=44100):
 def read_wav_as_np(filename):
     # wav.read returns the sampling rate per second  (as an int) and the data (as a numpy array)
     data = wav.read(filename)
-
+    print(data[1])
     np_arr = data[1].astype('float32') / 32767.0  # Normalize 16-bit input to [-1, 1] range
     # np_arr = np.array(np_arr)
     return np_arr, data[0]
@@ -243,10 +243,14 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
     std_x = np.sqrt(
             np.mean(np.mean(np.abs(x_data - mean_x) ** 2, axis=0), axis=0))  # STD across num examples and num timesteps
     std_x = np.maximum(1.0e-8, std_x)  # Clamp variance if too tiny
+
+    '''
     x_data[:][:] -= mean_x  # Mean 0
     x_data[:][:] /= std_x  # Variance 1
     y_data[:][:] -= mean_x  # Mean 0
     y_data[:][:] /= std_x  # Variance 1
+    '''
+    #The above code snippet causes noise.
 
     np.save(out_file + '_mean', mean_x)
     np.save(out_file + '_var', std_x)
@@ -295,8 +299,15 @@ def load_training_example(filename, block_size=2048, useTimeDomain=False):
     y_t.append(np.zeros(block_size))  # Add special end block composed of all zeros
     if useTimeDomain:
         return x_t, y_t
+<<<<<<< HEAD
     X = time_blocks_to_fft_blocks(x_t, 1)
     Y = time_blocks_to_fft_blocks(y_t, 2)
+=======
+    '''print(len(x_t))'''
+    X = time_blocks_to_fft_blocks(x_t)
+    Y = time_blocks_to_fft_blocks(y_t)
+    print(np.shape(X))
+>>>>>>> edc52f584d33eedb684bf07c3022e185bbaabf06
     return X, Y
 
 
