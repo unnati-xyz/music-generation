@@ -266,26 +266,27 @@ def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, 
 
 def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False):
     num_seqs = tensor.shape[1]
+    chunks = []
     for i in range(indices):
-        chunks = []
         for x in range(num_seqs):
             chunks.append(tensor[i][x])
-        chunk_wav=filename + str(i) + '.wav'
-        save_generated_example(filename + str(i) + '.wav', chunks, useTimeDomain=useTimeDomain)
+    save_generated_example(filename + 'merged' + '.wav', chunks, useTimeDomain=useTimeDomain)
 
-        spf = wave.open(chunk_wav, 'r')
+    chunk_wav=filename+'merged.wav'
 
-        # Extract Raw Audio from Wav File
-        signal = spf.readframes(-1)
-        signal = np.fromstring(signal, 'Int16')
-        fs = spf.getframerate()
+    spf = wave.open(chunk_wav, 'r')
 
-        time = np.linspace(0, len(signal)/fs, num=len(signal))
+    # Extract Raw Audio from Wav File
+    signal = spf.readframes(-1)
+    signal = np.fromstring(signal, 'Int16')
+    fs = spf.getframerate()
 
-        plt.figure(1)
-        plt.title('Wave chunk ' + str(i+1))
-        plt.plot(time, signal)
-        plt.show()
+    time = np.linspace(0, len(signal)/fs, num=len(signal))
+
+    plt.figure(1)
+    plt.title('Wave that goes into neural network model')
+    plt.plot(time, signal)
+    plt.show()
 
 
 
@@ -299,15 +300,11 @@ def load_training_example(filename, block_size=2048, useTimeDomain=False):
     y_t.append(np.zeros(block_size))  # Add special end block composed of all zeros
     if useTimeDomain:
         return x_t, y_t
-<<<<<<< HEAD
-    X = time_blocks_to_fft_blocks(x_t, 1)
-    Y = time_blocks_to_fft_blocks(y_t, 2)
-=======
+
     '''print(len(x_t))'''
-    X = time_blocks_to_fft_blocks(x_t)
-    Y = time_blocks_to_fft_blocks(y_t)
+    X = time_blocks_to_fft_blocks(x_t, count=1)
+    Y = time_blocks_to_fft_blocks(y_t, count=2)
     print(np.shape(X))
->>>>>>> edc52f584d33eedb684bf07c3022e185bbaabf06
     return X, Y
 
 
