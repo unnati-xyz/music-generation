@@ -23,7 +23,10 @@ def generate_from_seed(model, seed, sequence_length, data_variance, data_mean):
 
 	#Finally, post-process the generated sequence so that we have valid frequencies
 	#We're essentially just undo-ing the data centering process
+	"""
 	for i in range(len(output)):
 		output[i] *= data_variance
 		output[i] += data_mean
 	return output
+	"""
+	
