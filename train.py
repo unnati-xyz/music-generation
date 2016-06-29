@@ -24,7 +24,7 @@ print('Finished loading training data')
 freq_space_dims = X_train.shape[2] #88200
 print('freq_space_dims=',freq_space_dims)
 hidden_dims = config['hidden_dimension_size']
-
+print('Using Mean Absolute Error')
 # Creates a lstm network
 model = network_utils.create_lstm_network(num_frequency_dimensions=freq_space_dims, num_hidden_dimensions=hidden_dims) #hidden_dims=1024
 
