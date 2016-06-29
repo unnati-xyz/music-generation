@@ -15,5 +15,5 @@ def create_lstm_network(num_frequency_dimensions, num_hidden_dimensions, num_rec
     model.add(TimeDistributedDense(input_dim=num_hidden_dimensions, output_dim=num_frequency_dimensions))
 
     # Done building the model.Now, configure it for the learning process
-    model.compile(loss='mean_squared_error', optimizer='rmsprop')
+    model.compile(loss='mean_absolute_error', optimizer='rmsprop')
     return model
