@@ -51,7 +51,8 @@ def convert_mp3_to_wav(filename, sample_frequency):
     os.system(cmd)
     cmd = 'lame --decode {0} {1} --resample {2}'.format(quote(filename_tmp), quote(new_name), sample_freq_str)
     os.system(cmd)
-
+    
+    """
     '''This plots Amplitude on Y-axis and Time in seconds on X-axis'''
 
     # plot the converted wav file
@@ -71,7 +72,8 @@ def convert_mp3_to_wav(filename, sample_frequency):
     plt.title('Signal Wave...')
     plt.plot(time, signal)
     plt.show()
-
+    """
+    
     # Returns the name of the directory where all the WAV files are stored
     return new_name
 
@@ -154,8 +156,9 @@ def time_blocks_to_fft_blocks(blocks_time_domain, count):
         new_block = np.concatenate(
                 (np.real(fft_block), np.imag(fft_block)))  # Joins a sequence of arrays along an existing axis.
         fft_blocks.append(new_block)
-        plot_block.append(fft_block)
+        #plot_block.append(fft_block)
 
+    """
     # plots signal after fft
     timeRange = np.arange(0, 44100, 44100.0/len(plot_block))
 
@@ -173,7 +176,8 @@ def time_blocks_to_fft_blocks(blocks_time_domain, count):
     # Plotting the DFT
     plt.plot(timeRange, amplitude)
     plt.show()
-
+    """
+    
     return fft_blocks
 
 
@@ -272,6 +276,7 @@ def convert_nptensor_to_wav_files_verify(tensor, indices, filename, useTimeDomai
             chunks.append(tensor[i][x])
     save_generated_example(filename + 'merged' + '.wav', chunks, useTimeDomain=useTimeDomain)
 
+    """
     chunk_wav=filename+'merged.wav'
 
     spf = wave.open(chunk_wav, 'r')
@@ -287,7 +292,8 @@ def convert_nptensor_to_wav_files_verify(tensor, indices, filename, useTimeDomai
     plt.title('Wave that goes into neural network model')
     plt.plot(time, signal)
     plt.show()
-
+    """
+    
 def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False):
     num_seqs = tensor.shape[1]
     for i in indices:
