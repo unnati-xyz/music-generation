@@ -20,13 +20,14 @@ def generate_from_seed(model, seed, sequence_length, data_variance, data_mean):
 		newSeq = seedSeqNew[0][seedSeqNew.shape[1]-1]
 		newSeq = np.reshape(newSeq, (1, 1, newSeq.shape[0]))
 		seedSeq = np.concatenate((seedSeq, newSeq), axis=1)
-
+		
+	return output
 	#Finally, post-process the generated sequence so that we have valid frequencies
 	#We're essentially just undo-ing the data centering process
 	"""
 	for i in range(len(output)):
 		output[i] *= data_variance
 		output[i] += data_mean
-	return output
+	
 	"""
 	
