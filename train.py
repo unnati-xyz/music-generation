@@ -35,7 +35,7 @@ if os.path.isfile(model_filename):
 num_iters = 1  # Number of iterations for training
 epochs_per_iter = 1  # Number of iterations before we save our model
 batch_size = 1  # Number of training examples pushed to the GPU per batch.
-s
+
 # Larger batch sizes require more memory, but training will be faster
 print('Starting training!')
 while cur_iter < num_iters:
