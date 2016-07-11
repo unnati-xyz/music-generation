@@ -10,9 +10,9 @@ Now coming back to our earlier point of presenting the trained model with the se
 
 In nutshell, here is the generation algorithm:
 
-**Step 1** - Given A = [X\_0, X\_1, ... X\_n], generate X\_n + 1.
+**Step 1** - Given A = [X<sub>0</sub>, X<sub>1</sub>, ... X<sub>n</sub>], generate X<sub>n + 1</sub>.
 
-**Step 2** - Concatenate X\_n + 1 onto A.
+**Step 2** - Concatenate X<sub>n + 1</sub> onto A.
 
 **step 3** - Repeat the entire procedure MAX\_SEQ\_LEN times.
 
