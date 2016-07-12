@@ -16,7 +16,7 @@ In nutshell, here is the generation algorithm:
 
 **step 3** - Repeat the entire procedure MAX\_SEQ\_LEN times.
 
-In this project **MAX\_SEQ\_LEN** is nothing but **freq \* clip\_len) / block\_size**.
+In this project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
 Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
 
 Voila! After these 3 simple steps, you've your algorithmically generated music ready! 
