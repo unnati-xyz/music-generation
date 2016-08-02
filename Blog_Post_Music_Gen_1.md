@@ -7,7 +7,7 @@ Turns out, computers can actually churn out meaningful <a href="http://karpathy.
 
 Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this series of blog posts we'll explain how we tackled the problem with minimal technical jargon :p
 
-<h5>How does algorithmic music generation help?</h5>
+How does algorithmic music generation help?
 You might wonder why generating music using computer programs is a good idea.Well, because
 <ol>
 <li> It can assist music composers.Musiscians might come up with unique ways to use music generating tools. </li>
@@ -52,7 +52,7 @@ We then divided the numpy arrays of the wav files to smaller blocks each of size
 
 In the next blog post, we will cover how and why we converted the audio signal in time domain to frequency domain and how we finally came up with a np tensor which was fed to the neural network.
 
-In case you are interested, the entire code for our project is open sourced and is available on <a href="https://github.com/unnati-xyz/music-generation">GitHub</a>.Our program learns to generate music from raw mp3 files. So, you can use sufficient **mp3 files of your choice as training data** to make the kind of music you like!
+In case you are interested, the entire code for our project is open sourced and is available on <a href="https://github.com/unnati-xyz/music-generation">GitHub</a>.Our program learns to generate music from raw mp3 files. So, you can use sufficient _mp3 files of your choice as training data_ to make the kind of music you like!
 
 </p>
 
