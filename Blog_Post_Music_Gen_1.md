@@ -1,4 +1,6 @@
 <h3>Can computers be creative enough to make music ?</h3>
+![Image of Robot playing music](http://www.i-programmer.info/images/stories/News/2014/Nov/A/Naomusicicon.jpg)
+
 In the recent times, engineers & researchers have been extremely succesful in using Machine Learning for speech recognition, image classification,predictive analysis etc and have developed models which can achieve human level accuracy(or more) in the former tasks, but can we use Machine Learning to make generative models which can generate music,text,art etc.
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a>.
 
