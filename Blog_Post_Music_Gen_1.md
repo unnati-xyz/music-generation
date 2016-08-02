@@ -10,7 +10,12 @@ Over the past 2 months we at Unnati Data Labs,attempted to generate music using 
 Before, we start off you can listen to the music we generated at the end of our experiment [here](https://soundcloud.com/padmaja-bhagwat/generated-music).
 
 <p>
- Before we go on to construct a neural network, we need to a have a dataset on which we can train the network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.This innvolved some digital signal processing stuff.
+Firstly, we need to a have a dataset on which we can train our neural network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.The input to neural networks are tensors which are just multi dimensional arrays.Hence, we had to convert the audio files to tensors.This innvolved some digital signal processing stuff.
+</p>
+
+<p>
+We know that sound waves are continous signals(infinite datapoints).However, our computers only operate on discrete values.Yet, computers can store and play music due to sampling.In sampling, we store the value of the signal at regular intervals of time determined by the sampling frequency(finite datapoints).
+We have set the sampling frequency to 44100 Hz.Human ear is senstitive only to frequencies upto 20,000 Hz. So, even if frequencies above 20,000 Hz are present in the song, they do not make a difference as they are inaudible. So, according to Nyquist's Sampling Theorem the sampling frequency must be nearly double that of 20,000 Hz. So, 44100 Hz is considered the standard sampling frequency.48000 Hz is another standard sampling frequency.
 </p>
 
 <p>
@@ -25,11 +30,9 @@ We preferred monoaural wav files over monoaural mp3 files, even though wav files
 The values in the numpy arrays are normalized to [-1,1] range in order to increase the speed of gradient descent.
 </p>
 
+
+
 <p>
-We know that sound waves are continous signals(infinite datapoints).However, our computers only operate on discrete values.Yet, computers can store and play music due to sampling.In sampling, we store the value of the signal at regular intervals of time determined by the sampling frequency(finite datapoints).
-We have set the sampling frequency to 44100 Hz.Human ear is senstitive only to frequencies upto 20,000 Hz. So, even if frequencies above 20,000 Hz are present in the song, they do not make a difference as they are inaudible. So, according to Nyquist's Sampling Theorem the sampling frequency must be nearly double that of 20,000 Hz. So, 44100 Hz is considered the standard sampling frequency.48000 Hz is another standard sampling frequency.
-
-
 We then divided the numpy arrays of the wav files to smaller blocks each of size 44100 and zero padded the last block,so that it also has a size of 44100.Zero padding does not alter the frequency content of the signal and does not increase the resolution of the discrete signal given as output by the Fourier Transform. It just increases the number of phasors outputted by the fourier transform.FFT(Fast Fourier Transform)as the name suggests is a fast version of fourier transform and is most efficient when the input size is a power of of 2. So, the default block size is fixed to 2048.
 
  </p>
