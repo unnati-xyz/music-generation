@@ -2,7 +2,7 @@
 ![Image of Robot playing music](http://www.i-programmer.info/images/stories/News/2014/Nov/A/Naomusicicon.jpg)
 
 Most of you might have heard about how Deep Mind's computer program *AlphaGo* defeated the world champion Lee Sedol three times in a row.A typical game of Go has about 10<sup>360</sup> moves,a humongous number.So, the program did not win the game by brute force , but it actually thought of a stratergy before making a move, just like we do.*AlphaGo* managed to achieve this feat just by using Deep Learning combined with some spectacular software engineering.
-Recently, Deep Learning has also been extremely succesful  in classifying images,recognising human speech and making predictions at human level accuracy(or more).Clearly, Deep Learning is really good at doing things like us humans!An interesting problem is can we extend Deep Learning to make generative models which can generate pieces of art and music like artists ?
+Recently, Deep Learning has also been extremely succesful  in classifying images,recognising human speech and making predictions at human level accuracy(or more).Clearly, Deep Learning is really good at doing things like us humans! An interesting problem is can we extend Deep Learning to make generative models which can generate pieces of art and music like artists ?
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a> with a little bit of training.
 
 Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this series of blog posts we'll explain how we tackled the problem with minimal technical jargon :p
@@ -19,7 +19,7 @@ We have set the sampling frequency to 44100 Hz.Human ear is senstitive only to f
 </p>
 
 <p>
-We converted raw mp3 files to monaural wav format.
+Initially we converted raw mp3 files to monaural wav format.
 A monaural sound uses just one channel and the same channel is sent to all the speakers. So, the sound we hear in both our ears is exactly identical. As a result of this monaural sounds do not have directionality/spaciality which is not much of a requirement to generate music(it's more relevant in live perfomances etc).
 Also, the numpy arrays produced from monoaural songs is half the size of that produced by stero sounds. This reduces memory requirements as well as the time taken to train our neural network.
 </p>
