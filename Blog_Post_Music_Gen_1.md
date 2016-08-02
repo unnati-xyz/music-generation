@@ -12,9 +12,9 @@ You might wonder why generating music using computer programs is a good idea.Wel
 <ol>
 <li> It can assist music composers.Musiscians might come up with unique ways to use music generating tools. </li>
 
-<li> algorithmically generated music can be used in youtube videos, games, movies etc </li>
+<li> Algorithmically generated music can be used in youtube videos, games, movies etc </li>
 
-<li> it helps us understand the power & limitations of Machine Learnin & Deep Learning techniques.It helps to see wether computer programs can be creative and innovative.</li>
+<li> It helps us understand the power & limitations of Machine Learnin & Deep Learning techniques.It helps to see wether computer programs can be creative and innovative.</li>
 
 </ol>
 
@@ -48,13 +48,19 @@ We then divided the numpy arrays of the wav files to smaller blocks each of size
 
  </p>
 
+<p>
 
+In the next blog post, we will cover how and why we converted the audio signal in time domain to frequency domain and how we finally came up with a np tensor which was fed to the neural network.
 
 In case you are interested, the entire code for our project is open sourced and is available on <a href="https://github.com/unnati-xyz/music-generation">GitHub</a>.Our program learns to generate music from raw mp3 files. So, you can use sufficient **mp3 files of your choice as training data** to make the kind of music you like!
 
-<h5>Here are some links to help you understand the concepts covered in this post as well as the coming ones</h5>
+</p>
+
+<p>
+Here are some links to help you understand the concepts covered in this post as well as the coming ones
 <ol>
 <li><a href="http://jackschaedler.github.io/circles-sines-signals/index.html">Digital Signal Processing</a>
 <li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTMs</a>
 <li><a href="https://cs224d.stanford.edu/reports/NayebiAran.pdf">GRUV:Algorithmic Music Generation using RNN</a>
 </ol>
+</p>
