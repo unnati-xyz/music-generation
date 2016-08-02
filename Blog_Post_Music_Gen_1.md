@@ -7,6 +7,16 @@ Turns out, computers can actually churn out meaningful <a href="http://karpathy.
 
 Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this series of blog posts we'll explain how we tackled the problem with minimal technical jargon :p
 
+<h5>How does algorithmic music generation help?</h5>
+<ol>
+<li> Can assist music composers </li>
+
+<li> Used in Youtube videos,games etc </li>
+
+<li> Helps us understand the power & limitations of Machine Learning techniques</li>
+
+</ol>
+
 Before, we start off you can listen to the music we generated at the end of our experiment [here](https://soundcloud.com/padmaja-bhagwat/generated-music).
 
 <p>
@@ -37,36 +47,11 @@ We then divided the numpy arrays of the wav files to smaller blocks each of size
 
  </p>
 
-<h5>How does algorithmic music generation help?</h5>
-<ol>
-<li> Can assist music composers </li>
 
-<li> Used in Youtube videos,games etc </li>
 
-<li> Helps us understand the power & limitations of Machine Learning techniques</li>
+In case you are interested, the entire code for our project is open sourced and is available on <a href="https://github.com/unnati-xyz/music-generation">GitHub</a>.Our program learns to generate music from raw mp3 files. So, you can use sufficient **mp3 files of your choice as training data** to make the kind of music you like!
 
-</ol>
-
-<h5>Problems we faced</h5>
-<ol>
-<li> Takes alot of time to train to the network making it difficult to experiment with different configurations</li>
-
-<li> We didn't have a suitable mechanism to validate the  generated music, we just went by intution</li>
-
-</ol>
-
-<h5>Future Plans</h5>
-<ol>
-
-<li>Try to generate music with lyrics :p </li>
-
-<li>Mix different instruments & genres of music</li>
-
-</ol>
-
-The entire code for our project is open sourced and is available on <a href="https://github.com/unnati-xyz/music-generation">GitHub</a>.Our program learns to generate music from raw mp3 files. So, you can use sufficient **mp3 files of your choice as training data** to make the kind of music you like!
-
-<h5>References</h5>
+<h5>Here are some links to help you understand the concepts covered in this post as well as the coming ones</h5>
 <ol>
 <li><a href="http://jackschaedler.github.io/circles-sines-signals/index.html">Digital Signal Processing</a>
 <li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTMs</a>
