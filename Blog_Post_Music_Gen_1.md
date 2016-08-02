@@ -1,7 +1,7 @@
 <h2>Can computers be creative enough to make compelling music ?</h2>
 ![Image of Robot playing music](http://www.i-programmer.info/images/stories/News/2014/Nov/A/Naomusicicon.jpg)
 
-Most of you might have heard about how Deep Mind's computer program *AlphaGo* defeated the world champion Lee Sedol three times in a row.A typical game of Go has about 10<sup>360,</sup> moves,a humongous number.So, the program did not win the game by brute force , but it actually thought of a stratergy before making a move, just like we do.*AlphaGo* managed to achieve this feat just by using Deep Learning combined with some spectacular software engineering.
+Most of you might have heard about how Deep Mind's computer program *AlphaGo* defeated the world champion Lee Sedol three times in a row.A typical game of Go has about 10<sup>360</sup> moves,a humongous number.So, the program did not win the game by brute force , but it actually thought of a stratergy before making a move, just like we do.*AlphaGo* managed to achieve this feat just by using Deep Learning combined with some spectacular software engineering.
 Recently, Deep Learning has also been extremely succesful  in classifying images,recognising human speech and making predictions at human level accuracy(or more).Clearly, Deep Learning is really good at doing things like us humans!An interesting problem is can we extend Deep Learning to make generative models which can generate pieces of art and music like artists ?
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a> with a little bit of training.
 
