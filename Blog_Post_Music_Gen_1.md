@@ -1,10 +1,11 @@
 <h3>Can computers be creative enough to make compelling music ?</h3>
 ![Image of Robot playing music](http://www.i-programmer.info/images/stories/News/2014/Nov/A/Naomusicicon.jpg)
 
-In the recent times, engineers & machine learning experts have been extremely succesful in using Machine Learning for speech recognition, image classification,predictive analysis etc and have developed models which can achieve human level accuracy(or more) in the former tasks, but can we use Machine Learning to make generative models which can generate music,text,art etc.
+Most of you might have heard about how Deep Mind's computer program *AlphaGo* defeated the world champion Lee Sedol three times in a row.A typical game of Go has about 10<sup>360,</sup> moves,a humongous number.So, the program did not win the game by brute force , but it actually thought of a stratergy just like we do before making a move.*AlphaGo* managed to achieve this feat just by using Deep Learning combined with spectacular software engineering.
+Recently, Deep Learning has also been extremely succesful  in classifying images,recognising human speech and making predictions at human level accuracy(or more).So, Deep Learning has proven to be really good at doing things like us humans!An interesting problem is can we extend Deep Learning to make generative models which can generate music,art and pieces of literature ?
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a>.
 
-Over the past 2 months we attempted to generate music using algorithms based on deep learning techniques.We used the LSTM(Long Short Term Memory) flavour of RNNs.
+Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on deep learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks to accomplish this task.
 
 <p>
  Before we go on to construct a neural network, we need to a have a dataset on which we can train the network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.This innvolved some digital signal processing stuff.
