@@ -22,6 +22,7 @@ Before, we start off you can listen to the music we generated at the end of our 
 
 <p>
 Firstly, we need to a have a dataset on which we can train our neural network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.The input to neural networks are tensors which are just multi dimensional arrays.Hence, we had to convert the audio files to tensors.This innvolved some digital signal processing stuff.
+This might seem like a herculean task,but if done right, it could be the defining factor in the working of the neural network.
 </p>
 
 <p>
@@ -37,8 +38,8 @@ Also, the numpy arrays produced from monoaural songs is half the size of that pr
 
 <p>
 We used <a href="http://lame.sourceforge.net/">lame</a> which is an open source mp3 encoder to convert the monaural files to wav format.
-We preferred monoaural wav files over monoaural mp3 files, even though wav files being uncompressed occupy more memory because there are functions in <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.wavfile.read.html">scipy</a> which can read and write wav files directly into numpy arrays.There aren't any reliable open source packages which can read/write mp3 files to numpy arrays because of various <a href="https://github.com/scipy/scipy/issues/3536">copyright & patent issues</a> assosciated with the mp3 format.
-The values in the numpy arrays are normalized to [-1,1] range in order to increase the speed of gradient descent.
+We preferred monoaural wav files over monoaural mp3 files, even though wav files being uncompressed occupy more memory because the WAV format is well integrated with python( <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.wavfile.read.html">scipy functions</a>) .There aren't any reliable open source packages which can read/write mp3 files to numpy arrays because of various <a href="https://github.com/scipy/scipy/issues/3536">copyright & patent issues</a> assosciated with the mp3 format.
+
 </p>
 
 
@@ -50,7 +51,7 @@ We then divided the numpy arrays of the wav files to smaller blocks each of size
 
 <p>
 
-In the next blog post, we will cover how and why we converted the audio signal in time domain to frequency domain and how we finally came up with a np tensor which was fed to the neural network.
+
 </p>
 
 <p>
@@ -59,7 +60,7 @@ In case you are interested, the entire code for our project is open sourced and 
 </p>
 
 <p>
-Here are some links to help you understand the concepts covered in this post as well as the coming ones
+Here are some useful links to help you understand the concepts covered in this post
 <ol>
 <li><a href="http://jackschaedler.github.io/circles-sines-signals/index.html">Digital Signal Processing</a>
 <li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTMs</a>
