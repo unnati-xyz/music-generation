@@ -117,19 +117,18 @@ In nutshell, here is the generation algorithm:
 In our project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
 Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
 
-<p>
+
 <ol>
 We did face some problems during the course of our project.
-
 <li>We didn't have a suitable mechanism to validate the generated music, we just went by intution.It is quite difficult to define "good music".</li>
 <li>It takes quite alot of time to train to the network making it difficult to experiment with different configurations.We used an AWS instance with 16GB RAM.It took 3 days to complete 2000 iterations on just 10 songs each about a minute long.</li>
 <ol>
+
 </p>
 
 
 <p>
 In case you are interested, the entire code for our project is open sourced and is available on <a href="https://github.com/unnati-xyz/music-generation">GitHub</a>.Our program learns to generate music from raw mp3 files. So, you can use sufficient mp3 files of your choice as training data to make the kind of music you like!
-
 </p>
 
 
