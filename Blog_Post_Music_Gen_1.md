@@ -119,8 +119,9 @@ In nutshell, here is the generation algorithm:
 
 In our project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
 Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
+</p>
 
-
+<p>
 <ol>
 We did face some problems during the course of our project.
 <li>We didn't have a suitable mechanism to validate the generated music, we just went by intution.It is quite difficult to define "good music".</li>
