@@ -5,9 +5,8 @@ Most of you might have heard about how Deep Mind's computer program *AlphaGo* de
 Recently, Deep Learning has also been extremely succesful  in classifying images,recognising human speech and making predictions at human level accuracy(or more).Clearly, Deep Learning is really good at doing things like us humans! An interesting problem is can we extend Deep Learning to make generative models which can generate pieces of art and music like artists ?
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a> with a little bit of training.
 
-Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this series of blog posts we'll explain how we tackled the problem with minimal technical jargon :p
+Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this blog posts we'll explain how we tackled the problem with minimal technical jargon :p
 
-How does algorithmic music generation help?
 You might wonder why generating music using computer programs is a good idea.Well, because
 <ol>
 <li> It can assist music composers.Musiscians might come up with unique ways to use music generating tools. </li>
@@ -21,12 +20,13 @@ You might wonder why generating music using computer programs is a good idea.Wel
 Before, we start off you can listen to the music we generated at the end of our experiment [here](https://soundcloud.com/padmaja-bhagwat/generated-music).
 
 <p>
-Firstly, we need to a have a dataset on which we can train our neural network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.The input to neural networks are tensors which are just multi dimensional arrays.Hence, we had to convert the audio files to tensors.This innvolved some digital signal processing stuff.
+Firstly, we need to a have a dataset on which we can train our neural network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.The input to neural networks are tensors which are just multi dimensional arrays.Hence, we had to convert the audio files to tensors.This innvolved some [digital signal processing](http://jackschaedler.github.io/circles-sines-signals/index.html) stuff.
 This might seem like a herculean task,but if done right, it could be the defining factor in the working of the neural network.
 </p>
 
 <p>
 Let's spend some time understanding the type of data we are dealing with.We know that sound waves are continous signals(infinite datapoints).However, our computers only operate on discrete values.Yet, computers can store and play music due to sampling.In sampling, we store the value of the signal at regular intervals of time determined by the sampling frequency(finite datapoints).
+Sampling does lead to losing some data, but we cannot percieve the loss.
 We have set the sampling frequency to 44100 Hz.Human ear is senstitive only to frequencies upto 20,000 Hz. So, even if frequencies above 20,000 Hz are present in the song, they do not make a difference as they are inaudible. So, according to Nyquist's Sampling Theorem the sampling frequency must be nearly double that of 20,000 Hz. So, 44100 Hz is considered the standard sampling frequency.48000 Hz is another standard sampling frequency.
 </p>
 
@@ -38,30 +38,25 @@ Also, the numpy arrays produced from monoaural songs is half the size of that pr
 
 <p>
 We used <a href="http://lame.sourceforge.net/">lame</a> which is an open source mp3 encoder to convert the monaural files to wav format.
-We preferred monoaural wav files over monoaural mp3 files, even though wav files being uncompressed occupy more memory because the WAV format is well integrated with python( <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.wavfile.read.html">scipy functions</a>) .There aren't any reliable open source packages which can read/write mp3 files to numpy arrays because of various <a href="https://github.com/scipy/scipy/issues/3536">copyright & patent issues</a> assosciated with the mp3 format.
+We preferred monoaural wav files over monoaural mp3 files, even though wav files being uncompressed occupy more memory because the WAV format is well integrated with python( <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.wavfile.read.html">scipy functions</a>) .There aren't any reliable open source packages which can process mp3 files because of various <a href="https://github.com/scipy/scipy/issues/3536">copyright & patent issues</a> assosciated with the mp3 format.
 
 </p>
 
 
-
-<p>
-We then divided the numpy arrays of the wav files to smaller blocks each of size 44100 and zero padded the last block,so that it also has a size of 44100.Zero padding does not alter the frequency content of the signal and does not increase the resolution of the discrete signal given as output by the Fourier Transform. It just increases the number of phasors outputted by the fourier transform.FFT(Fast Fourier Transform)as the name suggests is a fast version of fourier transform and is most efficient when the input size is a power of of 2. So, the default block size is fixed to 2048.
-</p>
-To have the network understand the different frequencies in the time signal better, we have converted the signal from the time domain into its corresponding frequency domain using a "discrete fourier transform". "Discrete" because we have a periodically sampled time signal; and a "transform" indicating that we are converting the signal into its constitutional sine waves with their amplitudes and phases. This is probably the most important part of pre-processing the signal before feeding it into the neural network for training. We did this using the fast fourier transform (FFT) algorithm.
+To have the network understand the different frequencies in the time signal better, we have converted the signal from the time domain into its corresponding frequency domain using a "Discrete Fourier Ttransform".Let's try to break down this long term. "Discrete" because we have a periodically sampled time signal; and a "transform" indicating that we are converting the signal into its constitutional sine waves with their amplitudes and phases. This is probably the most important part of pre-processing the signal before feeding it into the neural network for training. We did this using the Fast Fourier Transform (FFT) algorithm.
 
 The output of the FFT is an array of complex numbers, which do need to be divided into real and imaginary parts before being fed into the neural network.
 
 In order to capture sounds properly, we have to fourier transform equally spaced "buckets" of the signal so that the temporal nature of the signal is not lost. The size of these "buckets" is crucial in determining the network's ability to learn. We've set the bucket size to 11025 samples.
 
-As for the last bucket that we have which doesn't have the necessary full number of blocks, we zero pad it at the end. This just means adding zeroes to make it divisible by our bucket size. Note that this does not change the FFT result, but makes it better descriptive because of a larger number of samples and no change in the sampling frequency.
 
 Each of these buckets represents one pass through the network. Since we're using keras to build our model, we need to batch up the training data into blocks. So we decided to take a block to be arbitrarily equal to 40 training examples (or 40 buckets if you're counting it that way). Nothing to worry about here, just keras formalities.
 
-Brief recap: we've taken the sample audio, divided it into buckets, disctretely fourier transformed each bucket after zero padding to ensure fitting and then just divided them further into blocks or batches.
+Brief recap: We've taken the sample audio in WAV format, divided it into buckets, disctretely fourier transformed each bucket after zero padding to ensure fitting and then just divided them further into blocks or batches.
 
 Now, this input is fit to be fed into the neural network to train it. We've structured it as a 3-dimensional array. The first dimension denotes batch size and the second, the block/bucket size.
 
-The songs in the training dataset are now processed and converted to a format which any neural network would understand, namely the np-tensor format. Now comes the question, "What type of neural networks should be used?". In general, there are two major variants of neural networks - the Convolutional Neural Networks and the Recurrent Neural Networks. Let's weigh up the properties of both variants and see why recurrent networks are more suitable. One observation is that the np-tensors are basically sequential information of the music.
+Now, we are done with all the pre-processing tasks.The question which arises now is , "What type of neural networks should be used?". In general, there are two major variants of neural networks - the Convolutional Neural Networks and the Recurrent Neural Networks. Let's weigh up the properties of both variants and see why recurrent networks are more suitable for the task at hand. One observation is that the np-tensors we have are basically sequential information of the music.
 
 Convolutional networks accept an input vector of fixed size and produce an output vector of fixed size. They also have limited amount of processing steps(limited by the number of hidden layers). Also, there exists no dependency between the input and output vectors. Traditionally, such networks are used for classification purposes wherein the input is converted to a np-tensor format and the output vector contains the probabilities of it being in each class. In other words, it would be a  bad idea to use convolutional networks for generating music as the output (Eg: The next note) will heavily depend on the previous sequences of notes generated. Since the music requires plausibility, we need to include the history of notes to generate the next note which is clearly not supported by convolutional networks.
 
@@ -69,7 +64,7 @@ Convolutional networks accept an input vector of fixed size and produce an outpu
 
 The idea behind recurrent networks is to make use of sequential information. Recurrent neural networks are called recurrent because they repeatedly perform a same set of pre-defined operations on every element of the sequence(np-tensor in our case). The important part is that the next set of operations also takes into the account the results of previous computations. From another point of view, we can see that RNN's have a memory that can persist the information. Sounds more suitable right? We give a sequence of notes to the network, it goes through the entire sequence and generates the next note which is plausible to hear. Therefore, recurrent neural network is used.
 
-## Understanding the structure of RNN ##
+<h5>Understanding Recurrent Neural Networks</h5>
 
 Recurrent neural networks have loops in them thus allowing persistence of information. Loops can be visuzalized as a layer having sequential neurons wherein each neuron accepts the input from previous layer as well as from previous neuron in the same layer.
 ![Visualizing RNN as an unfolded layer of neurons](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
@@ -102,10 +97,9 @@ The architecture of the LSTM used for music generation is a shallow network cons
 
 ## How exactly does the model learn to generate music? ##
 
-The np-tensor contains a large sequence of notes divided into single layers of a fixed length. The vector used for computing loss function is same as the input layers but shifted by 1 block. Say, L5 L4 L3 L2 L1 are the input vectors. The vectors used for computing loss function will be L6 L5 L4 L3 L2 respectively. The LSTM generates a sequence of notes which is compaed against the expected out and the errors are backpropagated thus adjusting the parameters learnt by the LSTM.
+We have modelled it as a Regression problem.The np-tensor contains a large sequence of notes divided into single layers of a fixed length. The vector used for computing loss function is same as the input layers but shifted by 1 block. Say, L5 L4 L3 L2 L1 are the input vectors. The vectors used for computing loss function will be L6 L5 L4 L3 L2 respectively. The LSTM generates a sequence of notes which is compaed against the expected out and the errors are backpropagated thus adjusting the parameters learnt by the LSTM.
 The important part is that the generated layer of notes is appended to the previous sequence thus improving the plausibility. This would have not been possible with CNNs but it is possible with RNN's as only the 3 matrices are used for computation repeatedly on the appended sequence as well!
-The optimizer used is 'rms-prop' and the loss function used is 'mean squared error'.
-The learnt paramets are stored in a file for generation later on.
+
 
 In nutshell, here is the generation algorithm:
 
@@ -130,11 +124,4 @@ In case you are interested, the entire code for our project is open sourced and 
 
 </p>
 
-<p>
-Here are some useful links to help you understand the concepts covered in this post
-<ol>
-<li><a href="http://jackschaedler.github.io/circles-sines-signals/index.html">Digital Signal Processing</a>
-<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">LSTMs</a>
-<li><a href="https://cs224d.stanford.edu/reports/NayebiAran.pdf">GRUV:Algorithmic Music Generation using RNN</a>
-</ol>
-</p>
+
