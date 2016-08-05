@@ -1,6 +1,6 @@
 <h2>Can computers be creative enough to make compelling music ?</h2>
 ![Image of Robot playing music](http://www.i-programmer.info/images/stories/News/2014/Nov/A/Naomusicicon.jpg)
-
+<p>
 Most of you might have heard about how Deep Mind's computer program *AlphaGo* defeated the world champion Lee Sedol three times in a row.A typical game of Go has about 10<sup>360</sup> moves,a humongous number.So, the program did not win the game by brute force , but it actually thought of a stratergy before making a move, just like we do.*AlphaGo* managed to achieve this feat just by using Deep Learning combined with some spectacular software engineering.
 Recently, Deep Learning has also been extremely succesful  in classifying images,recognising human speech and making predictions at human level accuracy(or more).Clearly, Deep Learning is really good at doing things like us humans! An interesting problem is can we extend Deep Learning to make generative models which can generate pieces of art and music like artists ?
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a> with a little bit of training.
@@ -43,7 +43,7 @@ We preferred monoaural wav files over monoaural mp3 files, even though wav files
 
 </p>
 
-
+<p>
 To have the network understand the different frequencies in the time signal better, we have converted the signal from the time domain into its corresponding frequency domain using a "Discrete Fourier Ttransform".Let's try to break down this long term. "Discrete" because we have a periodically sampled time signal; and a "transform" indicating that we are converting the signal into its constitutional sine waves with their amplitudes and phases. This is probably the most important part of pre-processing the signal before feeding it into the neural network for training. We did this using the Fast Fourier Transform (FFT) algorithm.
 
 The output of the FFT is an array of complex numbers, which do need to be divided into real and imaginary parts before being fed into the neural network.
@@ -56,21 +56,22 @@ Each of these buckets represents one pass through the network. Since we're using
 Brief recap: We've taken the sample audio in WAV format, divided it into buckets, disctretely fourier transformed each bucket after zero padding to ensure fitting and then just divided them further into blocks or batches.
 
 Now, this input is fit to be fed into the neural network to train it. We've structured it as a 3-dimensional array. The first dimension denotes batch size and the second, the block/bucket size.
+</p>
 
 <h4>Which Neural Network Architecture to use ?</h4>
-
+<p>
 Now, we are done with all the pre-processing tasks.The question which arises now is , "What type of neural networks should be used?". In general, there are two major variants of neural networks - the Convolutional Neural Networks and the Recurrent Neural Networks. Let's weigh up the properties of both variants and see why recurrent networks are more suitable for the task at hand. One observation is that the np-tensors we have are basically sequential information of the music.
 
 Convolutional networks accept an input vector of fixed size and produce an output vector of fixed size. They also have limited amount of processing steps(limited by the number of hidden layers). Also, there exists no dependency between the input and output vectors. Traditionally, such networks are used for classification purposes wherein the input is converted to a np-tensor format and the output vector contains the probabilities of it being in each class. In other words, it would be a  bad idea to use convolutional networks for generating music as the output (Eg: The next note) will heavily depend on the previous sequences of notes generated. Since the music requires plausibility, we need to include the history of notes to generate the next note which is clearly not supported by convolutional networks.
+</p>
 
-
-Let's try to see if recurrent neural networks can do the job for us? 
 <p>
+Let's try to see if recurrent neural networks can do the job for us? 
 The idea behind recurrent networks is to make use of sequential information. Recurrent neural networks are called recurrent because they repeatedly perform a same set of pre-defined operations on every element of the sequence(np-tensor in our case). The important part is that the next set of operations also takes into the account the results of previous computations. From another point of view, we can see that RNN's have a memory that can persist the information. Sounds more suitable right? We give a sequence of notes to the network, it goes through the entire sequence and generates the next note which is plausible to hear. Therefore, recurrent neural network is used.
 </p>
 
 <h4>Understanding Recurrent Neural Networks</h4>
-
+<p>
 Recurrent neural networks have loops in them thus allowing persistence of information. Loops can be visuzalized as a layer having sequential neurons wherein each neuron accepts the input from previous layer as well as from previous neuron in the same layer.
 ![Visualizing RNN as an unfolded layer of neurons](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
 
@@ -99,9 +100,11 @@ The last step is to produce the output. Output depends on current cell state (up
 For more info:http://colah.github.io/posts/2015-08-Understanding-LSTMs
 
 The architecture of the LSTM used for music generation is a shallow network consisting of just 1 recurrent unit. The input and output neuron layers have the same size as the size of the np-tensor. The single hidden layer consists of 1024 neurons. We are still experimenting to find a better architecture by making the network denser. The shallow network requires around 2000 iterations for generating plausible music. Hopefully we will require lesser number of iterations on making the network denser while maintaining plausibility.
+</p>
 
 <h4>How exactly does the model learn to generate music? </h4>
 
+<p>
 The np-tensor contains a large sequence of notes divided into single layers of a fixed length. The vector used for computing loss function is same as the input layers but shifted by 1 block. Say, L5 L4 L3 L2 L1 are the input vectors. The vectors used for computing loss function will be L6 L5 L4 L3 L2 respectively. The LSTM generates a sequence of notes which is compaed against the expected out and the errors are backpropagated thus adjusting the parameters learnt by the LSTM.
 The important part is that the generated layer of notes is appended to the previous sequence thus improving the plausibility. This would have not been possible with CNNs but it is possible with RNN's as only the 3 matrices are used for computation repeatedly on the appended sequence as well!
 
