@@ -66,23 +66,23 @@ Convolutional networks accept an input vector of fixed size and produce an outpu
 </p>
 
 <p>
-Let's try to see if recurrent neural networks can do the job for us? 
+Let's try to see if recurrent neural networks can do the job for us.
 The idea behind recurrent networks is to make use of sequential information. Recurrent neural networks are called recurrent because they repeatedly perform a same set of pre-defined operations on every element of the sequence(np-tensor in our case). The important part is that the next set of operations also takes into the account the results of previous computations. From another point of view, we can see that RNN's have a memory that can persist the information. Sounds more suitable right? We give a sequence of notes to the network, it goes through the entire sequence and generates the next note which is plausible to hear. Therefore, recurrent neural network is used.
 </p>
 
 <h4>Understanding Recurrent Neural Networks</h4>
 <p>
 Recurrent neural networks have loops in them thus allowing persistence of information. Loops can be visuzalized as a layer having sequential neurons wherein each neuron accepts the input from previous layer as well as from previous neuron in the same layer.
-![Visualizing RNN as an unfolded layer of neurons](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
+<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png">Visualizing RNN as an unfolded layer of neurons</a>
 
 This way of visualization shows the degree of aptness between sequences and recurrent neural networks.
 But there is a drawback of vanilla recurrent neural networks, they cannot persist the information for long periods of time. A slightly complex model of vanilla recurrent neural networks is known as LSTM(Long Short Term Memory). A separate vector is dedicated for persisting the information known as the cell state.
 
-![Structure of LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png)
+<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png">Structure of LSTM</a>
 
 One huge advantage of LSTM's is that the number of parameters that it needs to learn is less compared to traditional networks. There are basically 3 matrices acting as weights for carrying forward information, updating information and producing output. The same 3 matrices are repeatedly used to perform operations on each element of the sequence. Let us look at each one of them.
 
-![Cell state](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png)
+<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png">Cell state</a>
 
 ![Step1](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-f.png)
 
