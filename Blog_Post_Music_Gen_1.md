@@ -30,6 +30,7 @@ Sampling does lead to losing some data, but we cannot percieve the loss.
 We have set the sampling frequency to 44100 Hz.Human ear is senstitive only to frequencies upto 20,000 Hz. So, even if frequencies above 20,000 Hz are present in the song, they do not make a difference as they are inaudible. So, according to Nyquist's Sampling Theorem the sampling frequency must be nearly double that of 20,000 Hz. So, 44100 Hz is considered the standard sampling frequency.48000 Hz is another standard sampling frequency.
 </p>
 
+<h4>How to feed songs to the Neural Network ?</h4>
 <p>
 Initially we converted raw mp3 files to monaural wav format.
 A monaural sound uses just one channel and the same channel is sent to all the speakers. So, the sound we hear in both our ears is exactly identical. As a result of this monaural sounds do not have directionality/spaciality which is not much of a requirement to generate music(it's more relevant in live perfomances etc).
@@ -56,15 +57,19 @@ Brief recap: We've taken the sample audio in WAV format, divided it into buckets
 
 Now, this input is fit to be fed into the neural network to train it. We've structured it as a 3-dimensional array. The first dimension denotes batch size and the second, the block/bucket size.
 
+<h4>Which Neural Network Architecture to use ?</h4>
+
 Now, we are done with all the pre-processing tasks.The question which arises now is , "What type of neural networks should be used?". In general, there are two major variants of neural networks - the Convolutional Neural Networks and the Recurrent Neural Networks. Let's weigh up the properties of both variants and see why recurrent networks are more suitable for the task at hand. One observation is that the np-tensors we have are basically sequential information of the music.
 
 Convolutional networks accept an input vector of fixed size and produce an output vector of fixed size. They also have limited amount of processing steps(limited by the number of hidden layers). Also, there exists no dependency between the input and output vectors. Traditionally, such networks are used for classification purposes wherein the input is converted to a np-tensor format and the output vector contains the probabilities of it being in each class. In other words, it would be a  bad idea to use convolutional networks for generating music as the output (Eg: The next note) will heavily depend on the previous sequences of notes generated. Since the music requires plausibility, we need to include the history of notes to generate the next note which is clearly not supported by convolutional networks.
 
-## Can recurrent networks do the job for us? ##
 
+Let's try to see if recurrent neural networks can do the job for us? 
+<p>
 The idea behind recurrent networks is to make use of sequential information. Recurrent neural networks are called recurrent because they repeatedly perform a same set of pre-defined operations on every element of the sequence(np-tensor in our case). The important part is that the next set of operations also takes into the account the results of previous computations. From another point of view, we can see that RNN's have a memory that can persist the information. Sounds more suitable right? We give a sequence of notes to the network, it goes through the entire sequence and generates the next note which is plausible to hear. Therefore, recurrent neural network is used.
+</p>
 
-<h5>Understanding Recurrent Neural Networks</h5>
+<h4>Understanding Recurrent Neural Networks</h4>
 
 Recurrent neural networks have loops in them thus allowing persistence of information. Loops can be visuzalized as a layer having sequential neurons wherein each neuron accepts the input from previous layer as well as from previous neuron in the same layer.
 ![Visualizing RNN as an unfolded layer of neurons](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
@@ -95,28 +100,31 @@ For more info:http://colah.github.io/posts/2015-08-Understanding-LSTMs
 
 The architecture of the LSTM used for music generation is a shallow network consisting of just 1 recurrent unit. The input and output neuron layers have the same size as the size of the np-tensor. The single hidden layer consists of 1024 neurons. We are still experimenting to find a better architecture by making the network denser. The shallow network requires around 2000 iterations for generating plausible music. Hopefully we will require lesser number of iterations on making the network denser while maintaining plausibility.
 
-## How exactly does the model learn to generate music? ##
+<h4>How exactly does the model learn to generate music? </h4>
 
-We have modelled it as a Regression problem.The np-tensor contains a large sequence of notes divided into single layers of a fixed length. The vector used for computing loss function is same as the input layers but shifted by 1 block. Say, L5 L4 L3 L2 L1 are the input vectors. The vectors used for computing loss function will be L6 L5 L4 L3 L2 respectively. The LSTM generates a sequence of notes which is compaed against the expected out and the errors are backpropagated thus adjusting the parameters learnt by the LSTM.
+The np-tensor contains a large sequence of notes divided into single layers of a fixed length. The vector used for computing loss function is same as the input layers but shifted by 1 block. Say, L5 L4 L3 L2 L1 are the input vectors. The vectors used for computing loss function will be L6 L5 L4 L3 L2 respectively. The LSTM generates a sequence of notes which is compaed against the expected out and the errors are backpropagated thus adjusting the parameters learnt by the LSTM.
 The important part is that the generated layer of notes is appended to the previous sequence thus improving the plausibility. This would have not been possible with CNNs but it is possible with RNN's as only the 3 matrices are used for computation repeatedly on the appended sequence as well!
 
 
 In nutshell, here is the generation algorithm:
 
-**Step 1** - Given A = [X<sub>0</sub>, X<sub>1</sub>, ... X<sub>n</sub>], generate X<sub>n + 1</sub>.
+**Step 1** - Given A = [X<sub>0</sub>, X<sub>1</sub>, ... X<sub>n</sub>], generate X<sub>n + 1</sub> ( Regresssion Problem )
 
 **Step 2** - Concatenate X<sub>n + 1</sub> onto A.
 
-**step 3** - Repeat the entire procedure MAX\_SEQ\_LEN times.
+**Step 3** - Repeat the entire procedure MAX\_SEQ\_LEN times.
 
-In this project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
+In our project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
 Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
 
-Problems we faced
+<p>
+<ol>
+We did face some problems during the course of our project.
 
-Takes alot of time to train to the network making it difficult to experiment with different configurations
-We didn't have a suitable mechanism to validate the generated music, we just went by intution
-
+<li>We didn't have a suitable mechanism to validate the generated music, we just went by intution.It is quite difficult to define "good music".</li>
+<li>It takes quite alot of time to train to the network making it difficult to experiment with different configurations.We used an AWS instance with 16GB RAM.It took 3 days to complete 2000 iterations on just 10 songs each about a minute long.</li>
+<ol>
+</p>
 
 
 <p>
