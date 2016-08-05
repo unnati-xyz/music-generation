@@ -20,7 +20,7 @@ You might wonder why generating music using computer programs is a good idea.Wel
 Before, we start off you can listen to the music we generated at the end of our experiment [here](https://soundcloud.com/padmaja-bhagwat/generated-music).
 
 <p>
-Firstly, we need to a have a dataset on which we can train our neural network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.The input to neural networks are tensors which are just multi dimensional arrays.Hence, we had to convert the audio files to tensors.This innvolved some [digital signal processing](http://jackschaedler.github.io/circles-sines-signals/index.html) stuff.
+Firstly, we need to a have a dataset on which we can train our neural network.So, the first step was to convert music files(which are usually in mp3 format) into a format which the neural network can understand.The input to neural networks are tensors which are just multi dimensional arrays.Hence, we had to convert the audio files to tensors.This innvolved some<a href="http://jackschaedler.github.io/circles-sines-signals/index.html"> digital signal processing</a> stuff.
 This might seem like a herculean task,but if done right, it could be the defining factor in the working of the neural network.
 </p>
 
