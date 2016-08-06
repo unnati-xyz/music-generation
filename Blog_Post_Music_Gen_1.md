@@ -48,14 +48,19 @@ We preferred monoaural WAV files over monoaural mp3 files, even though WAV files
 To have the network understand the different frequencies in the time signal better, we have converted the signal from the time domain into its corresponding frequency domain using a "Discrete Fourier Transform".Let's try to break down this long term. "Discrete" because we have a periodically sampled time signal; "transform" indicating that we are converting the signal into its constitutional sine waves with their amplitudes and phases. This is probably the most important part of pre-processing the signal before feeding it into the neural network for training. We did this using the Fast Fourier Transform (FFT) algorithm.
 
 The output of the FFT is an array of complex numbers, which need to be divided into real and imaginary parts before being fed into the neural network.
+</p>
 
+<p>
 In order to capture sounds properly, we have to fourier transform equally spaced "buckets" of the signal so that the temporal nature of the signal is not lost. The size of these "buckets" is crucial in determining the network's ability to learn. We've set the bucket size to 11025 samples.
 
 
 Each of these buckets represents one pass through the network. Since we're using <a href="https://keras.io/">keras</a> to build our model, we need to batch up the training data into blocks. So we decided to take a block to be arbitrarily equal to 40 training examples (or 40 buckets if you're counting it that way). Nothing to worry about here, just keras formalities.
+</p>
 
+<p>
 Let's have a brief recap: We've taken the sample audio and convereted it to monaural WAV format, then divided it into buckets, disctretely fourier transformed each bucket after zero padding to ensure fitting and then just divided them further into blocks or batches.
-
+</p>
+<p>
 Now, the input data is fit to be fed into the neural network to train it. We've structured it as a 3-dimensional array. The first dimension denotes batch size and the second, the block/bucket size.
 </p>
 
