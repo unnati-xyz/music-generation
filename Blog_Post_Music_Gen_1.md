@@ -73,8 +73,10 @@ The idea behind recurrent networks is to make use of sequential information. Rec
 <h4>Understanding Recurrent Neural Networks</h4>
 <p>
 Recurrent neural networks have loops in them thus allowing persistence of information. Loops can be visuzalized as a layer having sequential neurons wherein each neuron accepts the input from previous layer as well as from previous neuron in the same layer.
-<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png">Visualizing RNN as an unfolded layer of neurons</a>
+</p>
+![Visualizing RNN as an unfolded layer of neurons](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
 
+<p>
 This way of visualization shows the degree of aptness between sequences and recurrent neural networks.
 But there is a drawback of vanilla recurrent neural networks, they cannot persist the information for long periods of time. A slightly complex model of vanilla recurrent neural networks is known as LSTM(Long Short Term Memory). A separate vector is dedicated for persisting the information known as the cell state.
 
