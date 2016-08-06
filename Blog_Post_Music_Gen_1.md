@@ -103,7 +103,7 @@ The next step is to update the cell state. To do this, we need to include curren
 
 The last step is to produce the output. Output depends on current cell state (updated version). The updated cell state vector is passed through a tanh layer and is scaled by current input and previous output passed through a sigmoid layer of neurons.
 
-For more info:http://colah.github.io/posts/2015-08-Understanding-LSTMs
+<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs">This</a> blog post beautifully explains Recuurent Neural Networks.Do give it a read to get a better picture.
 
 The architecture of the LSTM used for music generation is a shallow network consisting of just 1 recurrent unit. The input and output neuron layers have the same size as the size of the np-tensor. The single hidden layer consists of 1024 neurons. We are still experimenting to find a better architecture by making the network denser. The shallow network requires around 2000 iterations for generating plausible music. Hopefully we will require lesser number of iterations on making the network denser while maintaining plausibility.
 </p>
@@ -113,6 +113,8 @@ The architecture of the LSTM used for music generation is a shallow network cons
 <p>
 The np-tensor contains a large sequence of notes divided into single layers of a fixed length. The vector used for computing loss function is same as the input layers but shifted by 1 block. Say, L5 L4 L3 L2 L1 are the input vectors. The vectors used for computing loss function will be L6 L5 L4 L3 L2 respectively. The LSTM generates a sequence of notes which is compaed against the expected out and the errors are backpropagated thus adjusting the parameters learnt by the LSTM.
 The important part is that the generated layer of notes is appended to the previous sequence thus improving the plausibility. This would have not been possible with CNNs but it is possible with RNN's as only the 3 matrices are used for computation repeatedly on the appended sequence as well!
+</p>
+
 
 
 In nutshell, here is the generation algorithm:
@@ -125,7 +127,7 @@ In nutshell, here is the generation algorithm:
 
 In our project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
 Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
-</p>
+
 
 <p>
 <ol>
