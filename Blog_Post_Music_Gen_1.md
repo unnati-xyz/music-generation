@@ -129,11 +129,11 @@ In nutshell, here is the generation algorithm:
 In our project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
 Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
 
-With this, we have explained all the major parts of our project.In case you have any doubts,suggestions or clarifications please feel free to reach out to us.We will do our best to help you out :)
+With this, we have explained all the major parts of our project. In case you have any doubts, suggestions or clarifications please feel free to reach out to us.We will do our best to help you out :)
 
 
 <ol>
-We'd also like to share some problems we encountered during the course of our project  :
+We'd also like to share some problems we encountered during the course of our project :
 <li>We didn't have a suitable mechanism to validate the generated music, we just went by intution.It is quite difficult to define "good music".</li>
 <li>It takes quite alot of time to train the network making it difficult to experiment with different configurations.We used an AWS instance with 16GB RAM and it took 3 days to complete 2000 iterations on just 10 songs each about a minute long.Training the network on a GPU instance is more practical idea.</li>
 <ol>
