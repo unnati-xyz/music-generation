@@ -8,7 +8,7 @@ Turns out, computers can actually churn out meaningful <a href="http://karpathy.
 
 Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this blog post we are gonna explain how we tackled the problem with minimal technical jargon :p
 
-Now,you might wonder why generating music using computer programs is a good idea at all. Well, because
+Now, you might wonder why generating music using computer programs is a good idea at all. Well, because
 <ol>
 <li> It can assist music composers.Musiscians might come up with unique ways to use music generating programs to their advantage. </li>
 
@@ -130,10 +130,8 @@ In nutshell, here is the generation algorithm:
 
 **Step 2** - Append X<sub>n + 1</sub> to A.
 
-**Step 3** - Repeat the entire procedure MAX\_SEQ\_LEN times.
+**Step 3** - Repeat Steps 1 and 2 again and again depending on the length of the music piece you wish to generate.
 
-In our project **MAX\_SEQ\_LEN** is nothing but **(freq \* clip\_len) / block\_size**.
-Where **freq**=44100 Hz, **clip\_len**=10 seconds and **block\_size=freq/4**=11025.
 
 With this, we have explained all the major parts of our project. In case you have any doubts, suggestions or clarifications please feel free to reach out to us.We will do our best to help you out :)
 
