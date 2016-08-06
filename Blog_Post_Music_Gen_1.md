@@ -67,7 +67,8 @@ Now, the input data is fit to be fed into the neural network to train it. We've 
 <h4>Which Neural Network Architecture to use ?</h4>
 <p>
 Now, we are done with all the pre-processing tasks.The question which arises now is , "What type of neural networks should be used?". In general, there are two major variants of neural networks - the Convolutional Neural Networks and the Recurrent Neural Networks. Let's weigh up the properties of both variants and see why recurrent networks are more suitable for the task at hand. A basic observation we can make at this stage is that the tensors we have are basically sequential information of the music.
-
+</p>
+<p>
 Convolutional networks accept an input vector of fixed size and produce an output vector of fixed size. They also have limited amount of processing steps(limited by the number of hidden layers). Also, there exists no dependency between the input and output vectors. Traditionally, such networks are used for classification purposes wherein the input is converted to tensor format and the output vector contains the probabilities of it being in each class. In other words, it would be a  bad idea to use convolutional networks for generating music as the output (Eg: The next note) will heavily depend on the previous sequences of notes generated. Since the music requires plausibility, we need to include the history of notes to generate the next note which is clearly not supported by convolutional networks.
 </p>
 
