@@ -6,15 +6,15 @@ Recently, Deep Learning has also been extremely succesful  in classifying images
 An interesting problem alot of researchers are looking into is can we extend Deep Learning to make generative models which can generate pieces of art and music like artists ?
 Turns out, computers can actually churn out meaningful <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">text</a> and <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">sensible images</a> with a little bit of training.
 
-Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this blog posts we'll explain how we tackled the problem with minimal technical jargon :p
+Over the past 2 months we at Unnati Data Labs,attempted to generate music using algorithms based on Deep Learning techniques.We used the LSTM(Long Short Term Memory) flavour of Recurrent Neural Networks(don't get bogged down by the fancy name) to accomplish this task.In this blog post we are gonna explain how we tackled the problem with minimal technical jargon :p
 
-Now,you might wonder why generating music using computer programs is a good idea.Well, because
+Now,you might wonder why generating music using computer programs is a good idea at all. Well, because
 <ol>
 <li> It can assist music composers.Musiscians might come up with unique ways to use music generating programs to their advantage. </li>
 
 <li> Algorithmically generated music can be used in youtube videos, games and movies </li>
 
-<li> It helps us understand the power & limitations of Machine Learning & Deep Learning techniques.It helps to see wether computer programs can be creative and innovative.</li>
+<li> It helps us understand the power & limitations of Machine Learning & Deep Learning techniques.It helps us to see wether computer programs can be creative and innovative.If they can, then we don't have to worry about making new inventions anymore.</li>
 
 </ol>
 
@@ -26,8 +26,8 @@ This might seem like a herculean task,but if done right, it could be the definin
 </p>
 
 <p>
-Let's spend some time understanding the type of data we are dealing with.We know that sound waves are continous signals.So, they have infinite datapoints.However, our computers only operate on discrete values.Yet, computers can store and play music due to Sampling.In sampling, we store the value of the signal at regular intervals of time determined by the sampling frequency.So, we represent continus signals with finite datapoints.
-Sampling does lead to losing some data, but we cannot percieve the loss.
+Let's spend some time understanding the type of data we are dealing with.We know that sound waves are continous signals.So, they have infinite datapoints.However, our computers only operate on discrete values.Yet, computers can store and play music due to Sampling.In sampling, we store the value of the signal at regular intervals of time determined by the sampling frequency.So, we represent continous signals with finite datapoints.
+Sampling does lead to losing some data, but we cannot percieve this loss.
 We have set the sampling frequency to 44100 Hz.Human ear is senstitive only to frequencies upto 20,000 Hz. So, even if frequencies above 20,000 Hz are present in the song, they do not make a difference as they are inaudible. So, according to Nyquist's Sampling Theorem the sampling frequency must be nearly double that of 20,000 Hz. So, 44100 Hz is considered the standard sampling frequency.
 </p>
 
