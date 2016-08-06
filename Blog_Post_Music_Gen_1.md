@@ -79,14 +79,18 @@ Recurrent neural networks have loops in them thus allowing persistence of inform
 <p>
 This way of visualization shows the degree of aptness between sequences and recurrent neural networks.
 But there is a drawback of vanilla recurrent neural networks, they cannot persist the information for long periods of time. A slightly complex model of vanilla recurrent neural networks is known as LSTM(Long Short Term Memory). A separate vector is dedicated for persisting the information known as the cell state.
+</p>
 
-<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png">Structure of LSTM</a>
+![Structure of LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png)
 
+<p>
 One huge advantage of LSTM's is that the number of parameters that it needs to learn is less compared to traditional networks. There are basically 3 matrices acting as weights for carrying forward information, updating information and producing output. The same 3 matrices are repeatedly used to perform operations on each element of the sequence. Let us look at each one of them.
+</p>
 
-<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png">Cell state</a>
+![Cell state](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png)
 
 ![Step1](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-f.png)
+
 
 Assume we are at step t, C denotes cell state, h denotes the output and x denotes input. We need to first decide how much of the previous information to persist based on the current input and previous output. This decision is made by a sigmoid layer that outputs a number between 0 and 1. A number closer to 1 is an indication of persistence.
 
