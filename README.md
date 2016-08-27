@@ -11,7 +11,7 @@ The following packages has to be installed before running this code:
 3. *Matplotlib* for visualizing the input.
 4. *LAME* and *SoX* to convert mp3 files into other formats such as wav.
 
-## Step 1: Convertin the given mp3 files into np tensors
+## Step 1: Converting the given mp3 files into np tensors
 
 Type the following command into the terminal:
 
