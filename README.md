@@ -4,7 +4,7 @@ Algorithmic music generation using RNN(Recurrent Neural Networks)
 
 Language used : Python 3.5
 
-The following packages has to be installed before running this code:
+The following packages have to be installed before running this code:
 
 1. *Keras* version 0.1.0 with Theano as the backend.
 2. *NumPy* and *SciPy* for various mathematical computation on tensors.
