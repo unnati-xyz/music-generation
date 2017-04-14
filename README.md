@@ -21,7 +21,7 @@ This converts mp3 into mono files and then into WAV file, which is stored in the
 By the end of this one can find these 2 files generated "YourMusicLibraryNP_x.npy", "YourMusicLibraryNP_y.npy". 
 "YourMusicLibraryNP_x.npy" contains the input sequence for training and "YourMusicLibraryNP_y.npy" contains the same sequence as that of input sequence but shifted by one block.
 
-##Step 2: Training the model
+## Step 2: Training the model
 
 Type the following command into the terminal:
 
@@ -30,7 +30,7 @@ Type the following command into the terminal:
 This builds a LSTM model that generates a sequence of notes which is compared against the expected output and the errors are back-propagated, thus adjusting the parameters learnt by the LSTM. 
 You can change the number of Iterations, number of epochs per iteration and batch size by adjusting the following parameters "num_iters", "epochs_per_iter", "batch_size" respectively in train.py.
 
-##Step 3: Generating the music
+## Step 3: Generating the music
 
 Now that you've finished training the model, its time to generate some music:)
 Type the following command in your terminal':
