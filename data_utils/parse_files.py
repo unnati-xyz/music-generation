@@ -112,7 +112,7 @@ def write_np_as_wav(X, sample_rate, filename):
 
 
 def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song_np by padding it
-
+    block_size=int(block_size)
     # Block lists initialised
     block_lists = []
 
@@ -128,7 +128,7 @@ def convert_np_audio_to_sample_blocks(song_np, block_size):  # this returns song
         # Stores each block in the "block" variable
         block = song_np[num_samples_so_far:num_samples_so_far + block_size]
         '''print("block.shape[0]=", block.shape[0])'''
-        if (block.shape[0] < block_size):
+        if (block.shape[0] < int(block_size)):
             padding = np.zeros(
                     (block_size - block.shape[0],))  # this is to add 0's in the last block if it not completely filled
             block = np.concatenate((block,
@@ -184,7 +184,7 @@ def time_blocks_to_fft_blocks(blocks_time_domain, count):
 def fft_blocks_to_time_blocks(blocks_ft_domain):
     time_blocks = []
     for block in blocks_ft_domain:
-        num_elems = block.shape[0] / 2
+        num_elems = block.shape[0] // 2
         real_chunk = block[0:num_elems]
         imag_chunk = block[num_elems:]
         new_block = real_chunk + 1.0j * imag_chunk
@@ -193,9 +193,9 @@ def fft_blocks_to_time_blocks(blocks_ft_domain):
     return time_blocks
 
 
-def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, max_files=20, useTimeDomain=False):
+def convert_wav_files_to_nptensor(directory, block_size, max_seq_len, out_file, max_files=200, useTimeDomain=False):
     files = []
-
+    block_size=int(block_size)
     # If the file is already a WAV file, then the code simply stores it as it is
     for file in os.listdir(directory):
         if file.endswith('.wav'):
@@ -306,6 +306,7 @@ def convert_nptensor_to_wav_files(tensor, indices, filename, useTimeDomain=False
 
 def load_training_example(filename, block_size=2048, useTimeDomain=False):
     # read_wav_as_np returns data as a numpy array and the sampling rate stored in data and bitrate respectively
+    block_size=int(block_size)
     data, bitrate = read_wav_as_np(filename)
 
     # x_t has the padded data i.e with 0's in the empty space of the last block
